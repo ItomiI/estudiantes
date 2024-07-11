@@ -26,7 +26,10 @@ public class SistemaSIU {
     Estudiante trieEstudiantes;
     Carreras trieCarreras;
 
-    public SistemaSIU(InfoMateria[] infoMaterias, String[] libretasUniversitarias){//O(E) + (O(M) * O(N_m) * ( O(|car|) + O(|mat|)))
+    //cada carrera se busca e inserta en tiempo O(|carrera|), las veces que salga en el nombre de una materia
+    //entonces cada carrera se buscaria e insertaria en O(|C| * |M_c|)
+
+    public SistemaSIU(InfoMateria[] infoMaterias, String[] libretasUniversitarias){//O(E + sum_c_C(|c| * |M_c|) + sum_m_M(sum_n_M(|n|)))
         trieEstudiantes = new Estudiante();//(1)
         for(String libreta : libretasUniversitarias)//cantidad de libretas O(E)
         {
@@ -40,18 +43,19 @@ public class SistemaSIU {
             Numero num = new Numero();//O(1)
             int[] docentes = new int[]{0,0,0,0};//O(1)
             ArrayList<String> estudents = new ArrayList<>();
+
             for(ParCarreraMateria par : infomat.getParesCarreraMateria()){//O(N_m)
 
                 String car = par.getCarrera();
-                NodoCar nodocar = trieCarreras.buscar(car);//O(|car|)
+                NodoCar nodocar = trieCarreras.buscar(car);//O(|carrera|)
 
                 if(nodocar == null)//O(1)
                 {
-                    nodocar = trieCarreras.insert(par.getCarrera());//O(|car|)
+                    nodocar = trieCarreras.insert(par.getCarrera());//O(|carrera|)
                 }
                 variaciones.add(new TuplaMatCar(par.getNombreMateria(),nodocar.materiastrie));//O(1)
 
-                trieCarreras.insert_materia(nodocar, par.getNombreMateria(),variaciones,num,docentes,estudents);//O(|mat|)
+                trieCarreras.insert_materia(nodocar, par.getNombreMateria(),variaciones,num,docentes,estudents);//O(|N_m|)
                 
             }
         }
