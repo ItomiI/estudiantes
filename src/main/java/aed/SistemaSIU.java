@@ -27,7 +27,7 @@ public class SistemaSIU {
     Carreras trieCarreras;
 
     //cada carrera se busca e inserta en tiempo O(|carrera|), las veces que salga en el nombre de una materia
-    //entonces cada carrera se buscaria e insertaria en O(|C| * |M_c|)
+    //entonces cada carrera c, se buscaria e insertaria en O(|C| * |M_c|)
 
     public SistemaSIU(InfoMateria[] infoMaterias, String[] libretasUniversitarias){//O(E + sum_c_C(|c| * |M_c|) + sum_m_M(sum_n_M(|n|)))
         trieEstudiantes = new Estudiante();//(1)
