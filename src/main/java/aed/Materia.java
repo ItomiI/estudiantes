@@ -159,8 +159,12 @@ public class Materia {
 
 
 
+ 
     // Invariante:
-   
+    // nodo.valor es un char.
+    // nodo.last es false si y solo si (nodo.docentes es null, nodo.variaciones es null, estudiantes es null y nodo.inscriptos es null). 
+    // si nodo.last es true entonces nodo.materiastrie es diferente de null y cumple el invariante de Materia
+
 
 
     class NodoMat{

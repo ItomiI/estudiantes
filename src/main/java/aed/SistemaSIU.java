@@ -15,7 +15,9 @@ import aed.Materia.NodoMat;
 
 //Invariante de Representacion: 
 //carreras cumple el invariante de Carreras y estudiantes cumple el invariante de Estudiante
-
+// Para todo nodo1 y nodo2 con significado perteneciente a NodoMaterias, 
+//los observadores del nodo1 son iguales a los observadores del nodo2 si solo si el nombre de la materia de nodo1 
+//y nombre de la materia del nodo2 pertenecen a un mismo InfoMateria
 public class SistemaSIU {
 
     public enum CargoDocente{

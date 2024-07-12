@@ -114,7 +114,7 @@ public class Estudiante{//trie
 
     // Invariante:
     // nodo.valor es un char.
-    // nodo.last es true si y solo si nodo.hijos es null o vacio
+    // nodo.last es false si y solo si nodo.hijos no esta vacio 
     // los nodos sin significado siempre tienen hijos.
     class NodoEst{
 
