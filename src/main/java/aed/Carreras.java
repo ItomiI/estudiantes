@@ -9,7 +9,7 @@ import aed.Materia.NodoMat;
 //- raiz cumple el invariante de NodoCar
 //- los nodos estan ordenados lexicograficamente
 //- todos los v de los hijos de un nodo son diferentes
-
+//- El nodo raíz no tiene significado
 
 public class Carreras {
     

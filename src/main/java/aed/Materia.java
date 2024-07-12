@@ -9,7 +9,8 @@ import aed.SistemaSIU.CargoDocente;
 //- raiz no es nulo
 //- raiz cumple el invariante de NodoMat
 //- los nodos estan ordenados lexicograficamente
-//- todos los v de los hijos de un nodo son diferentes
+//- todos los nodo.v de los hijos de un nodo son diferentes
+//- El nodo raíz no tiene significado
 
 public class Materia {
     

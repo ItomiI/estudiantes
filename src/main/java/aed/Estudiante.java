@@ -9,7 +9,7 @@ import java.util.List;
 //- los nodos estan ordenados lexicograficamente
 //- todos los v de los hijos de un nodo son diferentes
 //- la altura del trie no supera al mayor tamaño de algun estudiante
-
+//- El nodo raíz no tiene significado
 
 public class Estudiante{//trie
     
